@@ -1,8 +1,58 @@
-<h2>Hellow from produit component</h2>
+<h2>Produits</h2>
 
-<ul>
-    <li *ngFor="let prd of produits">
-      Ref:  {{prd.ref}}, Quantite: {{prd.quantite}}, Prix Unitaire: {{prd.prixUnitaire}}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7">
+       <table class="table table-hover">
+         <thead>
+           <tr>
+             <th>Réference</th> <th>Quantité</th> <th>Prix Uniaire</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let prd of produits">
+             <td>{{prd.ref}}</td>  <td>{{prd.quantite}}</td> <td>{{prd.prixUnitaire}}</td> 
+           </tr>
 
-    </li>
-</ul>
+         </tbody>
+       </table>
+    </div>
+    <div class="col-lg-5">
+      <div class="card">
+        <div class="card-header bg-info text-white">
+          Ajouter un produit
+        </div>
+        <div class="card-body">
+          <form [formGroup]="produitForm">
+            
+            <div class="form-group">
+              <label>Réference :</label>
+              <input type="text" class="form-control" formControlName="ref"/>
+            </div>
+            <div class="alert alert-danger" *ngIf="produitForm.controls['ref'].invalid && 
+                                                   (produitForm.controls['ref'].toutched || produitForm.controls['ref'].dirty) ">
+                La saisie d'une réference est obligatoir !!
+            </div>
+
+            <div class="form-group">
+                <label>Quantite :</label>
+                <input type="number" class="form-control" formControlName="quantite"/>
+            </div>
+            
+            <div class="form-group">
+                  <label>Prix Unitaire :</label>
+                  <input type="number" class="form-control" formControlName="prixUnitaire"/>
+            </div>
+          <button class="btn btn-success" [disabled]="produitForm.prestine || produitForm.invalid">Ajouter</button>
+          </form>
+        </div>
+        <div class="card-footer">
+          Footer
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
