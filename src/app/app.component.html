@@ -5,7 +5,8 @@
     </div>
     <div class="col-lg-10">
             <!-- <button (click)="showHideSideBar =!showHideSideBar">Show/Hide</button> -->
-            <app-navbar [showSideBar]="showHideSideBar"></app-navbar>
+            <app-navbar [showSideBar]="showHideSideBar"
+                        (showSideBarChange)="onShowSideBarChange($event)" ></app-navbar>
             <app-content></app-content>
     </div>
 </div>

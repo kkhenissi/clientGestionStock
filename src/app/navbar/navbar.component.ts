@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   @Input() showSideBar: boolean;
+  @Output() showSideBarChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -15,6 +16,7 @@ export class NavbarComponent implements OnInit {
   }
   afficherSideBar() {
     this.showSideBar = !this.showSideBar;
+    this.showSideBarChange.emit(this.showSideBar);
 
   }
 
