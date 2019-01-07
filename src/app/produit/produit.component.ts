@@ -20,7 +20,6 @@ export class ProduitComponent  implements OnInit {
                 private fb: FormBuilder,
                 private route: ActivatedRoute) {
                     this.createForm();
-       
 }
 ngOnInit(): void {
     // this.produits =  this._produitService.getProduits();
@@ -72,14 +71,14 @@ addProduit() {
  }
 
  deleteProduit () {
-     this._produitService.deleteProduit(this.selectedProduit.ref)
+     this._produitService.deleteProduit(this.selectedProduit.id)
           .subscribe(
               res => {
                   this.selectedProduit = new Produit();
                   this.loadProduits();
               }
 
-          )
+          );
  }
 
 }
