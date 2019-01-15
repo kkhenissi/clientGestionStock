@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   @Input() showSideBar: boolean;
-  @Output() showSideBarChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  showSideBarChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private _appservice: AppService, private _router: Router) { }
 
@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
     this._appservice.logout(() => {
       this._router.navigateByUrl('/login');
 
-    })
+    });
   }
 
 }
