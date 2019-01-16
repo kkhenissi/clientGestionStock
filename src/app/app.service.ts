@@ -26,9 +26,9 @@ export class AppService {
       console.log('token ==============>', token);
       console.log('API_URLS.USER_URL ==============>', API_URLS.USER_URL);
         this.http.get(API_URLS.USER_URL).subscribe( resp => {
-          console.log('resp ==============>', resp['name']);
+         
           if (resp && resp['name']) {
-
+            console.log('resp ==============>', resp);
             this.authenticated = true;
 
           } else {
