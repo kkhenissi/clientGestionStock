@@ -4,7 +4,9 @@ import { API_URLS} from './config/api-url-config';
 import 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { callbackify } from 'util';
-
+import { Store } from '@ngrx/store';
+import { PrincipalState } from './shared/principal.state';
+import { SAVE_PRINCIPAL } from './shared/save.principal.action';
 @Injectable()
 export class AppService {
   authenticated: boolean = false;
@@ -14,7 +16,9 @@ export class AppService {
   //   password: 'password1'
   // };
 
-  constructor(private http: HttpClient, private cookieService: CookieService) { }
+  constructor(private http: HttpClient,
+              private cookieService: CookieService,
+              private store: Store<PrincipalState>) { }
 
   authenticate(credentials, callBack) {
 
@@ -28,8 +32,13 @@ export class AppService {
         this.http.get(API_URLS.USER_URL).subscribe( resp => {
          
           if (resp && resp['name']) {
-            console.log('resp ==============>', resp);
             this.authenticated = true;
+            console.log('resp ==============>', resp);
+            this.store.dispatch({
+              type: 'SAVE_PRINCIPAL',
+              payload: resp
+            });
+
 
           } else {
             this.authenticated = false;

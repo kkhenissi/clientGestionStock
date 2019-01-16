@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { API_URLS } from '../config/api-url-config';
-import { Produit } from '../shared/produit';
+import { Produit } from '../shared/produit.model';
 import { LoginComponent } from '../login/login.component';
 import { AppService } from '../app.service';
 

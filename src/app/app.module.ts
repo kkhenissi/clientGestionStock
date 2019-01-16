@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { AppService } from './app.service';
 import { XhrInterceptor } from './xhr.interceptor';
 import { CookieService } from 'ngx-cookie-service';
 import { UserComponent } from './user/user.component';
+import { principalReducer } from './shared/principal.reducer';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { UserComponent } from './user/user.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({principal: principalReducer})
   ],
   providers: [
     ProduitMockService,
