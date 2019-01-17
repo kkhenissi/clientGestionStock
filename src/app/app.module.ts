@@ -13,6 +13,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { from } from 'rxjs';
 import { ProduitService } from './produit/produit.service';
+import { UserService } from './user/user.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -21,6 +22,7 @@ import { XhrInterceptor } from './xhr.interceptor';
 import { CookieService } from 'ngx-cookie-service';
 import { UserComponent } from './user/user.component';
 import { principalReducer } from './shared/principal.reducer';
+import { CrudComponent } from './shared/crud/crud.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { principalReducer } from './shared/principal.reducer';
     DashboardComponent,
     LoginComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { principalReducer } from './shared/principal.reducer';
   providers: [
     ProduitMockService,
     ProduitService,
+    UserService,
     AppService,
     {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true},
     CookieService

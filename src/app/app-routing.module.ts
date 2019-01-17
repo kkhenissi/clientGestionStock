@@ -6,6 +6,7 @@ import { ProduitResolver } from './produit/produit.resolver';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
+import { UserResolver } from './user/user.resolver';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
         {
           path: 'user',
           component: UserComponent,
+          resolve:
+          {
+            users: UserResolver,
+          },
           outlet: 'contentOutlet'
           },
     ]
@@ -47,6 +52,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {enableTracing: false})],
   exports: [RouterModule],
-  providers: [ProduitResolver]
+  providers: [ProduitResolver, UserResolver]
 })
 export class AppRoutingModule { }

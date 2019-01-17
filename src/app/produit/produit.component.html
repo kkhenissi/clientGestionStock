@@ -1,5 +1,19 @@
-<h2>Produits</h2>
 
+<app-crud
+  [title]="'Produits'"
+  [data]="produits"
+  [service]="produitService"
+  [initItem]="produit"
+  [initForm]="produitForm"
+  [dataModelList]="produitsModel"
+>
+
+
+
+
+</app-crud>
+
+<!-- <h2>Produits</h2>
 <div class="container">
   <div class="row">
     <div class="col-lg-7">
@@ -17,8 +31,7 @@
              <td>{{prd.ref}}</td>  <td>{{prd.quantite}}</td> <td>{{prd.prixUnitaire}}</td> 
              <td>
                 <button class="btn btn-outline-primary"(click)="operation = 'edit'; selectedProduit = prd;">Edit</button>
-             <!-- </td>
-             <td> -->
+           
                 <button class="btn btn-outline-danger" (click)="operation = 'remove'; selectedProduit = prd;">Remove</button>
              </td>
            </tr>
@@ -84,4 +97,4 @@
 
   </div>
 
-</div>
+</div> -->
