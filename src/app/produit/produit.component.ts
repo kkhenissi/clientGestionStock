@@ -31,10 +31,10 @@ export class ProduitComponent  implements OnInit {
             prixUnitaire: ''
                     });
                     this.produitsModel = [
-                        new DataModel( 'id', 'ID', 'number', true, ''),
-                        new DataModel( 'ref', 'Référence', 'string', false, ''),
-                        new DataModel( 'quantite', 'Quantité', 'number', false, ''),
-                        new DataModel( 'prixUnitaire', 'Prix Unitaire', 'number', false, ''),
+                        // new DataModel( 'idr', 'ID', 'number', true, []),
+                        new DataModel( 'ref', 'Référence', 'string', false, []),
+                        new DataModel( 'quantite', 'Quantité', 'number', false, []),
+                        new DataModel( 'prixUnitaire', 'Prix Unitaire', 'number', false, []),
 
                     ];
     }

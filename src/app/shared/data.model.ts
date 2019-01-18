@@ -2,10 +2,10 @@
 
 export class DataModel {
     constructor(public columnName?: string,
-                public columnRef?: string,
+                public columnReference?: string,
                 public dataType?: string,
-                public readOnly?: boolean,
-                public message?: string) {
+                public readonly?: boolean,
+                public messages?: any) {
 
     }
 }

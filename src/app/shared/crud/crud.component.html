@@ -1,3 +1,5 @@
+
+<ng-container *ngIf="data; else loading">
 <h2>{{title}}</h2>
 <div class="container">
   <div class="row">
@@ -40,14 +42,14 @@
           <div *ngIf="operation == 'add' || operation == 'edit'">
             
               <form [formGroup]="crudForm">
-                <div *ngFor="let dataModel of dataModelList" [ngSwitch]="dataModel.dataType">
+                <div class="form-group" *ngFor="let dataModel of dataModelList" [ngSwitch]="dataModel.dataType">
 
-                    <div class="form-group" *ngFor="let dataModel of dataModelList"  >
+                    <div >
                         <label>{{dataModel.columnReference}} :</label>
-                        <input [ngSwitchCase]="string" type="text" class="form-control" formControlName="{{dataModel.columnName}}" 
+                        <input *ngSwitchCase="'string'" type="text" class="form-control" formControlName="{{dataModel.columnName}}" 
                                                                    [(ngModel)]="selectedItem[dataModel.columnName]"/>
   
-                        <input [ngSwitchCase]="number" type="number" class="form-control" formControlName="{{dataModel.columnName}}" 
+                        <input *ngSwitchCase="'number'" type="number" class="form-control" formControlName="{{dataModel.columnName}}" 
                                                                    [(ngModel)]="selectedItem[dataModel.columnName]"/>
                       </div>
   
@@ -110,3 +112,7 @@
   </div>
 
 </div>
+</ng-container>
+<ng-template #loading>
+  loading ....
+</ng-template>

@@ -50,7 +50,7 @@ loadItems() {
       () => { console.log('loading data was done !!'); });
 }
 
-addProduit() {
+add() {
   const item = this.crudForm.value;
   this.service.add(item).subscribe(
       res => {
@@ -58,7 +58,7 @@ addProduit() {
           this.loadItems();
       });
 }
-updateProduit() {
+update() {
    this.service.update(this.selectedItem)
         .subscribe(
             res => {
