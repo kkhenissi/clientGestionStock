@@ -4,7 +4,7 @@
     <div id="sidebar-wrapper">
         <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="[{outlets: {contentOutlet: 'dashboard'}}]"  routerLinkActive="active">
+                <a class="nav-link" [routerLink]="[{outlets: {contentOutlet: 'dashboard'}}]"   *ngIf="hasRoleAdmin()" routerLinkActive="active">
                         Dashboard
                 </a>
             </li>

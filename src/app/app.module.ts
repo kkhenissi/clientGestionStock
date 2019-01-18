@@ -23,6 +23,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { UserComponent } from './user/user.component';
 import { principalReducer } from './shared/principal.reducer';
 import { CrudComponent } from './shared/crud/crud.component';
+import { ChartModule } from 'angular2-chartjs';
 
 @NgModule({
   declarations: [
@@ -36,12 +37,14 @@ import { CrudComponent } from './shared/crud/crud.component';
     HomeComponent,
     UserComponent,
     CrudComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ChartModule,
     StoreModule.forRoot({principal: principalReducer})
   ],
   providers: [
