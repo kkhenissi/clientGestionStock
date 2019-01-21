@@ -1,1 +1,41 @@
-<chart [type]="type" [data]="data" [options]="option"></chart>>
+
+<div class="row">
+        <div class="col-lg-5">
+                        <app-my-chart
+                        [type] = "'bar'"
+                        [title] = "'Produits par catégorie'"
+                        [data]="produitsData">
+                        </app-my-chart>
+        </div>
+        <div class="col-lg-7">
+                        <app-my-chart
+                        [type]= "'line'"
+                        [title] = "'Répresentation linéaire des produits '"
+                        [data]="produitsData">
+                        </app-my-chart>
+        </div>
+</div>
+
+<div class="row">
+        
+                <div class="col-lg-5">
+                                <app-my-chart
+                                [type]= "'line'"
+                                [title] = "'Répresentation linéaire des utilistateurs '"
+                                [data]="usersData">
+                                </app-my-chart>
+                </div>
+
+
+                <div class="col-lg-7">
+                                <app-my-chart
+                                [type]= "'bar'"
+                                [title] = "'utilistateurs par role '"
+                                [data]="usersData">
+                                </app-my-chart>
+                </div>
+ </div>
+
+
+
+

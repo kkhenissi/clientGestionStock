@@ -33,14 +33,14 @@ export class UserComponent implements OnInit {
       this.users = this.route.snapshot.data.users;
 
       this.userForm = this.fb.group({
-        id: ['', Validators.required],
+   //     id: ['', Validators.required],
         username: ['', Validators.required],
         enable: ['', Validators.required],
                     });
 
                   this.usersModel = [
                       // new DataModel( 'id', 'ID', 'number', true, []),
-                      new DataModel( 'id', 'ID', 'number', false, []),
+                 //     new DataModel( 'id', 'ID', 'number', false, []),
                       new DataModel( 'username', 'Nom d\'utilsateur', 'string', false, []),
                       new DataModel( 'enable', 'Actif', 'number', true, [])
                   ];
