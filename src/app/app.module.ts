@@ -25,6 +25,8 @@ import { principalReducer } from './shared/principal.reducer';
 import { CrudComponent } from './shared/crud/crud.component';
 import { ChartModule } from 'angular2-chartjs';
 import { MyChartComponent } from './my-chart/my-chart.component';
+import { SimpleComponent } from './shared/crud/simple/simple.component';
+import { UploadComponent } from './shared/crud/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { MyChartComponent } from './my-chart/my-chart.component';
     HomeComponent,
     UserComponent,
     CrudComponent,
-    MyChartComponent
+    MyChartComponent,
+    SimpleComponent,
+    UploadComponent
 
   ],
   imports: [
