@@ -28,17 +28,17 @@ export class SimpleComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder) {
-        this.createForm();
+      this.createForm();
+        
 }
 
   ngOnInit() {
+    this.init();
   }
   createForm() {
     this.initForm ?  this.crudForm = this.initForm : this.crudForm = this.fb.group({});
   }
-  
-  
-  
+
   loadItems() {
     this.service.getAll().subscribe(
         data => { this.data = data },

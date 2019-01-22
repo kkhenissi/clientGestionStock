@@ -22,9 +22,10 @@ export class CrudComponent implements OnInit {
   @Input()
   dataModelList: DataModel[];
 
-  crudForm: FormGroup;
-  operation: String = 'add';
-  selectedItem: any;
+  crudType = {
+
+  };
+
 
   constructor() {}
 ngOnInit(): void {}

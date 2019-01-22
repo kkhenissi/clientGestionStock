@@ -1,3 +1,20 @@
-<p>
-  upload works!
-</p>
+<input type="file" id="uploadFile" name="uploadFile" #fileUploadInput accept=".csv" (change)="selectFile($event)" />
+<ng-container *ngIf="dataArray; else noData">
+<div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th *ngFor="let dataModel of dataModelListFiltered">{{dataModel.columnReference}}</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of dataArray">
+        <td *ngFor="let dataModel of dataModelListFiltered">{{item[dataModel.columnName]}}</td> 
+    </tr>
+    </tbody>
+  </table>
+</div>
+</ng-container>
+<ng-template #noData>
+  there no data found !!
+</ng-template>

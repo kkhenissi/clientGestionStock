@@ -11,15 +11,22 @@
   </ul>
 
 <div class="container">
-  <app-simple *ngIf="crudType == 'simple'"
-  [title]="'Produits'"
-    [data]="produits"
-    [service]="produitService"
-    [initItem]="produit"
-    [initForm]="produitForm"
-    [dataModelList]="produitsModel"
-  ></app-simple>
-  <app-upload *ngIf="crudType == 'upload'"></app-upload>
+  <div *ngIf="crudType == 'simple'">
+        <app-simple
+          [title]="'title'"
+          [data]="data"
+          [service]="service"
+          [initItem]="initItem"
+          [initForm]="initForm"
+          [dataModelList]="dataModelList"
+        ></app-simple>
+  </div>
+  <div *ngIf="crudType == 'upload'">
+         <app-upload
+         [dataModelList]="dataModelList"
+         ></app-upload>
+  </div>
+  
 </div>
 </ng-container>
 <ng-template #loading>
