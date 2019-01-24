@@ -35,6 +35,7 @@ export class UserComponent implements OnInit {
       this.userForm = this.fb.group({
    //     id: ['', Validators.required],
         username: ['', Validators.required],
+        password: ['', Validators.required],
         enable: ['', Validators.required],
                     });
 
@@ -42,6 +43,7 @@ export class UserComponent implements OnInit {
                       // new DataModel( 'id', 'ID', 'number', true, []),
                  //     new DataModel( 'id', 'ID', 'number', false, []),
                       new DataModel( 'username', 'Nom d\'utilsateur', 'string', false, []),
+                      new DataModel( 'password', 'Mot de passe', 'password', false, []),
                       new DataModel( 'enable', 'Actif', 'number', true, [])
                   ];
   }
