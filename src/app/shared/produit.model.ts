@@ -1,9 +1,16 @@
+import { Tva } from './tva.model';
+import { Photo } from './photo.model';
+
 export class Produit {
     constructor(
                 public id?: number,
-                public ref?: string,
-                public quantite?: number,
-                public prixUnitaire?: number
+                public nameItem?: string,
+                public descriptionItem?: string,
+                public quantiteItem?: number,
+                public startPrice?: number,
+                public actualPrice?: number,
+                public tvaItem?: Tva,
+                public photosItem?: Photo[]
                 ) {
 
     }

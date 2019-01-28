@@ -25,16 +25,20 @@ export class ProduitComponent  implements OnInit {
 
     ngOnInit(): void {
         this.produits = this.route.snapshot.data.produits;
+
         this.produitForm = this.fb.group({
-            ref: ['', Validators.required],
-            quantite: '',
-            prixUnitaire: ''
+            nameItem: ['', Validators.required],
+            descriptionItem: ['', Validators.required],
+            quantiteItem: '',
+            startPrice: ''
                     });
+
                     this.produitsModel = [
                         // new DataModel( 'idr', 'ID', 'number', true, []),
-                        new DataModel( 'ref', 'Référence', 'string', false, []),
-                        new DataModel( 'quantite', 'Quantité', 'number', false, []),
-                        new DataModel( 'prixUnitaire', 'Prix Unitaire', 'number', false, []),
+                        new DataModel( 'nameItem', 'Référence', 'string', false, []),
+                        new DataModel( 'descriptionItem', 'Description', 'string', false, []),
+                        new DataModel( 'quantiteItem', 'Quantité', 'number', false, []),
+                        new DataModel( 'startPrice', 'start Price', 'number', false, []),
 
                     ];
     }

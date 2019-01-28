@@ -29,7 +29,7 @@ export class SimpleComponent implements OnInit {
   constructor(
     private fb: FormBuilder) {
       this.createForm();
-        
+
 }
 
   ngOnInit() {

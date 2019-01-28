@@ -17,8 +17,8 @@
            <tr *ngFor="let item of data">
 
               <!-- {{{item[dataModel.dataType] == 'password' ? item[dataModel.columnName].disabled : item[dataModel.columnName]}} -->
-              <!-- <td *ngFor="let dataModel of dataModelList">{{item[dataModel.columnName]}}</td>  -->
-             <td *ngFor="let dataModel of dataModelList">{{item[dataModel?.dataType] == 'password' ? item[dataModel.columnName].disabled : item[dataModel.columnName]}}</td> 
+             <td *ngFor="let dataModel of dataModelList">{{item[dataModel.columnName]}}</td>  
+             <!-- <td *ngFor="let dataModel of dataModelList">{{item[dataModel?.dataType] == 'password' ? item[dataModel.columnName].disabled : item[dataModel.columnName]}}</td>  -->
              <td>
                 <button class="btn btn-outline-primary"(click)="operation = 'edit'; selectedItem = item;">Edit</button>
           
@@ -47,7 +47,6 @@
                         <label>{{dataModel.columnReference}} :</label>
                         <input *ngSwitchCase="'string'" type="text" class="form-control" formControlName="{{dataModel.columnName}}" 
                                                                    [(ngModel)]="selectedItem[dataModel.columnName]"/>
-  
                         <input *ngSwitchCase="'number'" type="number" class="form-control" formControlName="{{dataModel.columnName}}" 
                                                                    [(ngModel)]="selectedItem[dataModel.columnName]"/>
 
