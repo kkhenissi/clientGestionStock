@@ -30,7 +30,8 @@ export class ProduitComponent  implements OnInit {
             nameItem: ['', Validators.required],
             descriptionItem: ['', Validators.required],
             quantiteItem: '',
-            startPrice: ''
+            startPrice: '',
+            photoItem: ''
                     });
 
                     this.produitsModel = [
@@ -38,7 +39,8 @@ export class ProduitComponent  implements OnInit {
                         new DataModel( 'nameItem', 'Référence', 'string', false, []),
                         new DataModel( 'descriptionItem', 'Description', 'string', false, []),
                         new DataModel( 'quantiteItem', 'Quantité', 'number', false, []),
-                        new DataModel( 'startPrice', 'start Price', 'number', false, []),
+                        new DataModel( 'startPrice', 'Start Price', 'number', false, []),
+                        new DataModel( 'photoItem', ' Photo', 'file', false, []),
 
                     ];
     }

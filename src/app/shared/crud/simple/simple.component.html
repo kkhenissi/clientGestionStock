@@ -7,7 +7,9 @@
            <tr>
              <th *ngFor="let dataModel of dataModelList">{{dataModel.columnReference}}</th>
              <th>
-               <button class="btn btn-outline-primary" (click)="operation = 'add'; init();">ADD</button>
+               <button class="btn btn-outline-primary" (click)="operation = 'add'; init();">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+               </button>
              </th>
            </tr>
           
@@ -20,9 +22,17 @@
              <td *ngFor="let dataModel of dataModelList">{{item[dataModel.columnName]}}</td>  
              <!-- <td *ngFor="let dataModel of dataModelList">{{item[dataModel?.dataType] == 'password' ? item[dataModel.columnName].disabled : item[dataModel.columnName]}}</td>  -->
              <td>
-                <button class="btn btn-outline-primary"(click)="operation = 'edit'; selectedItem = item;">Edit</button>
+                <button class="btn btn-outline-primary"(click)="operation = 'edit'; selectedItem = item;">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+
+                </button>
+                
           
-                <button class="btn btn-outline-danger" (click)="operation = 'remove'; selectedItem = item;">Remove</button>
+                <button class="btn btn-outline-danger" (click)="operation = 'remove'; selectedItem = item;">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+
+                </button>
              </td>
            </tr>
            
@@ -52,6 +62,10 @@
 
                         <input *ngSwitchCase="'password'" type="password" class="form-control" formControlName="{{dataModel.columnName}}" 
                                                                    [(ngModel)]="selectedItem[dataModel.columnName]"/>
+                        
+                        <input *ngSwitchCase="'file'" type="file" class="form-control" formControlName="{{dataModel.columnName}}"/>                                           
+
+
                     </div>
   
                       <!-- <div class="alert alert-danger" *ngIf="produitForm.controls['ref'].invalid && 

@@ -18,7 +18,7 @@ constructor(private cookieService: CookieService) {
             headers: req.headers.set('authorization', `Basic ${token}`)
         });
 
-        console.log('*****************next.handle(xhr);*************', next.handle(xhr));
+   //     console.log('*****************next.handle(xhr);*************', next.handle(xhr));
         return next.handle(xhr);
 
     }

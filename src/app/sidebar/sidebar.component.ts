@@ -37,11 +37,11 @@ export class SidebarComponent implements OnInit {
   hasRoleAdmin(): boolean {
     let hasRoleAdmin: boolean = false;
     this.principal.authorities.forEach(item => {
-      console.log('hasRole ====>', item);
+   //   console.log('hasRole ====>', item);
       if (item.authority === 'ROLE_ADMIN' ) {
         hasRoleAdmin = true;
       }
-      console.log('hasRoleAdmin ====>', hasRoleAdmin);
+   //   console.log('hasRoleAdmin ====>', hasRoleAdmin);
     });
     return hasRoleAdmin;
   }

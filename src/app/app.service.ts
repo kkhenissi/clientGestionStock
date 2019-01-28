@@ -23,17 +23,17 @@ export class AppService {
   authenticate(credentials, callBack) {
 
     if ( credentials) {
-      console.log('user name ==============>', credentials.username);
-      console.log('password ==============>', credentials.password);
+   //   console.log('user name ==============>', credentials.username);
+   //   console.log('password ==============>', credentials.password);
      const token = btoa(credentials.username + ':' + credentials.password);
       this.cookieService.set('token', token);
-      console.log('token ==============>', token);
-      console.log('API_URLS.USER_URL ==============>', API_URLS.USER_URL);
+  //    console.log('token ==============>', token);
+  //    console.log('API_URLS.USER_URL ==============>', API_URLS.USER_URL);
         this.http.get(API_URLS.USER_URL).subscribe( resp => {
          
           if (resp && resp['name']) {
             this.authenticated = true;
-            console.log('resp ==============>', resp);
+   //         console.log('resp ==============>', resp);
             this.store.dispatch({
               type: 'SAVE_PRINCIPAL',
               payload: resp
