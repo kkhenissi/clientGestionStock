@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-7">
+    <div class="col-lg-8">
        <table class="table table-hover">
          <thead>
 
@@ -40,7 +40,7 @@
          </tbody>
        </table>
     </div>
-    <div class="col-lg-5">
+    <div class="col-lg-4">
       <div class="card">
         <div class="card-header bg-info text-white">
           {{operation == 'add' ? 'Ajouter' :
@@ -63,46 +63,33 @@
                         <input *ngSwitchCase="'password'" type="password" class="form-control" formControlName="{{dataModel.columnName}}" 
                                                                    [(ngModel)]="selectedItem[dataModel.columnName]"/>
                         
-                        <input *ngSwitchCase="'file'" type="file" class="form-control" formControlName="{{dataModel.columnName}}"/>                                           
 
-
-                    </div>
+                        <!-- <div class="row"> -->
+                              <!-- <div class="col-lg-12" >                                            -->
+                                   <input  *ngSwitchCase="'file'" type="file"   class="form-control" formControlName="{{dataModel.columnName}}"/> 
+                              <!-- </div>   
+                              <div class="col-lg-12" >   -->
+                                   <input  *ngSwitchCase="'Tva'" type="number" class="form-control" formControlName="{{dataModel.columnName}}"
+                                                                   [(ngModel)]="selectedItem[dataModel.columnName]"/> 
+                              <!-- </div>                                              -->
+                        <!-- </div> -->
+                        
   
-                      <!-- <div class="alert alert-danger" *ngIf="produitForm.controls['ref'].invalid && 
-                                                           (produitForm.controls['ref'].toutched || produitForm.controls['ref'].dirty) ">
-                        La saisie d'une réference est obligatoir !!
-                    </div> -->
+                  
+                    </div>
                 </div>
                   
-            <!--
-                  <div class="form-group">
-                    <label>Réference :</label>
-                    <input type="text" class="form-control" formControlName="ref" [(ngModel)]="selectedProduit.ref"/>
-                  </div>
-                  <div class="alert alert-danger" *ngIf="produitForm.controls['ref'].invalid && 
-                                                         (produitForm.controls['ref'].toutched || produitForm.controls['ref'].dirty) ">
-                      La saisie d'une réference est obligatoir !!
-                  </div>
-      
-                  <div class="form-group">
-                      <label>Quantite :</label>
-                      <input type="number" class="form-control" formControlName="quantite" [(ngModel)]="selectedProduit.quantite"/>
-                  </div>
-                  
-                  <div class="form-group">
-                        <label>Prix Unitaire :</label>
-                        <input type="number" class="form-control" formControlName="prixUnitaire" [(ngModel)]="selectedProduit.prixUnitaire"/>
-                  </div>
-                    -->
-                <button class="btn btn-success" [disabled]="crudForm.prestine || crudForm.invalid"
-                   (click)="operation == 'add' ? add() : update()">
-                   {{operation == 'add' ? 'Ajouter' :
-                  operation == 'edit' ? 'Modifier' :
-                  operation == 'remove' ? 'Supprimer': ''}}
-                  
-                  </button>
+          
+               
+                    <button class=" col-lg-12 btn btn-success" [disabled]="crudForm.prestine || crudForm.invalid"
+                          (click)="operation == 'add' ? add() : update()">
+                          {{operation == 'add' ? 'Ajouter' :
+                          operation == 'edit' ? 'Modifier' :
+                          operation == 'remove' ? 'Supprimer': ''}}
+                    </button>
+         
                  
-                </form>
+            </form>
                
           </div>
           <div *ngIf="operation == 'remove'" >

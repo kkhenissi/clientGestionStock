@@ -9,8 +9,8 @@ export class Produit {
                 public quantiteItem?: number,
                 public startPrice?: number,
                 public actualPrice?: number,
-                public tvaItem?: Tva,
-                public photosItem?: Photo[]
+                public tvaItem?: number,
+                public photosItem?: string
                 ) {
 
     }

@@ -47,7 +47,9 @@ export class SimpleComponent implements OnInit {
   }
   
   add() {
+   
     const item = this.crudForm.value;
+    console.log('Crud Formulaire ===============>', item);
     this.service.add(item).subscribe(
         res => {
             this.init();
@@ -55,6 +57,7 @@ export class SimpleComponent implements OnInit {
         });
   }
   update() {
+    console.log('Crud Formulaire ===============>', this.selectedItem);
      this.service.update(this.selectedItem)
           .subscribe(
               res => {
