@@ -10,7 +10,7 @@ export class ProduitResolver implements Resolve<any> {
 
     }
     resolve() {
-        return this.produitService.getAll();
+            return this.produitService.getAll();
 
     }
 

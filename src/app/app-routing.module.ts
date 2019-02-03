@@ -35,7 +35,7 @@ const routes: Routes = [
             users: UserResolver,
           },
           outlet: 'contentOutlet'
-          },
+        },
     ]
   },
   {
@@ -46,7 +46,8 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
-    pathMatch: 'full'}
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

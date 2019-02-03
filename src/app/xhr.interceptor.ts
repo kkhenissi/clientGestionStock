@@ -14,9 +14,11 @@ constructor(private cookieService: CookieService) {
     intercept(req: HttpRequest<any>, next: HttpHandler) {
 
         const token = this.cookieService.get('token');
+        console.log('token  ====>', token);
         const xhr = req.clone({
             headers: req.headers.set('authorization', `Basic ${token}`)
         });
+        console.log('xhr  ====>', next.handle(xhr));
 
    //     console.log('*****************next.handle(xhr);*************', next.handle(xhr));
         return next.handle(xhr);
